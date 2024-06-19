@@ -10,7 +10,6 @@ namespace CRUD_application_2.Controllers
     {
         private static List<User> _users = new List<User>();
 
-        public static List<User> userlist = new List<User>();
         // GET: User
         public ActionResult Index(string searchString)
         {
@@ -109,7 +108,7 @@ namespace CRUD_application_2.Controllers
         // POST: User/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult DeleteConfirmed(int id)
         {
             var user = _users.FirstOrDefault(u => u.Id == id);
             if (user != null)
